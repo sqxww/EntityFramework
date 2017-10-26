@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="queryTest" class="com.sqxww.framework.pojo.Entity" >
+		<property name="entityId" value="queryTest" ></property>
+		<property name="tableName" value="HELLO TEST" ></property>
+		<property name="fields">
+			<list>
+				<bean class="com.sqxww.framework.pojo.Field" >
+					<property name="fieldName" value="field1"></property>
+					<property name="labelName" value="label1"></property>
+				</bean>
+				<bean class="com.sqxww.framework.pojo.Field" >
+					<property name="fieldName" value="field2"></property>
+					<property name="labelName" value="label2"></property>
+				</bean>
+				<bean class="com.sqxww.framework.pojo.Field" >
+					<property name="fieldName" value="field3"></property>
+					<property name="labelName" value="label3"></property>
+				</bean>
+				<bean class="com.sqxww.framework.pojo.Field" >
+					<property name="fieldName" value="field4"></property>
+					<property name="labelName" value="label4"></property>
+				</bean>
+				<bean class="com.sqxww.framework.pojo.Field" >
+					<property name="fieldName" value="field5"></property>
+					<property name="labelName" value="label5"></property>
+				</bean>
+			</list>
+		</property>
+		<property name="criterions" >
+			<list>
+				<bean class="com.sqxww.framework.pojo.Criterion" >
+					<property name="criterias">
+						<list>
+							<bean class="com.sqxww.framework.pojo.Criteria" >
+								<property name="fieldName" value="field1" ></property>
+								<property name="operation" value="=" ></property>
+								<property name="labelName" value="label1" ></property>
+							</bean>
+							<bean class="com.sqxww.framework.pojo.Criteria" >
+								<property name="fieldName" value="field2" ></property>
+								<property name="operation" value="between" ></property>
+								<property name="labelName" value="label2" ></property>
+							</bean>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="updateTest" class="com.sqxww.framework.pojo.Entity" ></bean>
+	
+	<bean id="insertTest" class="com.sqxww.framework.pojo.Entity" ></bean>
+
+</beans>
