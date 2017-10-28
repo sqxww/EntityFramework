@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.util.StringUtils;
 
 /* 动态注册bean工具类
  * @author lizhiwei
@@ -22,8 +23,9 @@ public class DynamicRegister {
 	 * @param beanClass
 	 * @param properties
 	 * @param beanId
+	 * @param scope
 	 */
-	public static <T> void registerBean(Class<T> beanClass, Map<String, Object> properties, String beanId) {
+	public static <T> void registerBean(Class<T> beanClass, Map<String, Object> properties, String beanId, String scope) {
 		logger.info("开始注册类为 " + beanClass.getName() + "的bean, beanId 为:" + beanId);
 		DefaultListableBeanFactory beanFactory = ApplicationContextUtil.getDefaultListableBeanFactory();
 		//构建bean定义器
@@ -34,6 +36,9 @@ public class DynamicRegister {
 			for(Entry<String, Object> property : properties.entrySet()){
 				beanDefinitionBuilder.addPropertyValue(property.getKey(), property.getValue());
 			}
+		//设置bean的使用范围
+		if (!StringUtils.isEmpty(scope))
+			beanDefinitionBuilder.setScope(scope);
 		//beanId为空时默认使用类名首字母小写
 		if(beanId == null || "".equals(beanId)){
 			String className = beanClass.getSimpleName();

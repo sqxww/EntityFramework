@@ -10,6 +10,8 @@ public class Criteria {
 	private String operation;
 	private Object defaultValue;
 	private String labelName;
+	private Object value;
+	private boolean required = false;
 	
 	
 	public String getFieldName() {
@@ -35,5 +37,17 @@ public class Criteria {
 	}
 	public void setLabelName(String labelName) {
 		this.labelName = labelName;
+	}
+	public Object getValue() {
+		return value;
+	}
+	public void setValue(Object value) {
+		this.value = value;
+	}
+	public boolean isRequired() {
+		return required;
+	}
+	public void setRequired(boolean required) {
+		this.required = required;
 	}
 }

@@ -1,5 +1,7 @@
 package org.sqxww.framework.dao;
 
+import java.util.Map;
+
 /**
  * action:
  * author:李志伟
@@ -7,5 +9,9 @@ package org.sqxww.framework.dao;
  */
 
 public interface BaseDao {
+	public int insert(String sql, Map<String, Object> params);
 	
+	public int update(String sql, Map<String, Object> params);
+	
+	public int delete(String sql, Map<String, Object> params);
 }

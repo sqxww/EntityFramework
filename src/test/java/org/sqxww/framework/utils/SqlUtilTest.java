@@ -15,14 +15,20 @@ public class SqlUtilTest {
 	
 	@Before
 	public void init(){
-		context = new ClassPathXmlApplicationContext("conf/spring/applicationContext-*.xml");
+//		context = new ClassPathXmlApplicationContext("conf/spring/applicationContext-*.xml");
 	}
 
 	@Test
 	public void selectSqlTest(){
-		SqlUtil.selectSql("queryTest");
-		SqlUtil.getUpdateSql("queryTest");
-		SqlUtil.getInsertSql("queryTest");
+//		SqlUtil.selectSql("queryTest");
+//		SqlUtil.getUpdateSql("queryTest");
+//		SqlUtil.getInsertSql("queryTest");
+	}
+	
+	@Test
+	public void test() {
+		Integer a = 0;
+		System.out.println(a.toString());
 	}
 
 }

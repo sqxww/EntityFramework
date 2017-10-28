@@ -27,11 +27,15 @@ public class DynamicRegisterTest {
 		Map<String, Object> properties = new HashMap<String, Object>();
 		properties.put("fieldName", "helloRegister");
 		properties.put("sqlType", "string");
-		DynamicRegister.registerBean(Field.class, properties, "helloField");
-		System.out.println(((Field)context.getBean("helloField")).getFieldName());
-		properties.put("fieldName", "dlfsdf");
-		DynamicRegister.registerBean(Field.class, properties, "helloField");
-		System.out.println(((Field)context.getBean("helloField")).getFieldName());
+		DynamicRegister.registerBean(Field.class, properties, "helloField", "prototype");
+		Field field1 = (Field) context.getBean("helloField"); 
+		System.out.println(field1);
+		Field field2 = (Field) context.getBean("helloField");
+		System.out.println(field2);
+//		System.out.println(((Field)context.getBean("helloField")).getFieldName());
+//		properties.put("fieldName", "dlfsdf");
+//		DynamicRegister.registerBean(Field.class, properties, "helloField");
+//		System.out.println(((Field)context.getBean("helloField")).getFieldName());
 	}
 
 }

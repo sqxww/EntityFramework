@@ -1,18 +1,28 @@
 package org.sqxww.framework.pojo;
 
 import java.util.List;
+import java.util.Map;
 /* 或条件
  * @author lizhiwei
  * @date 2017年7月24日
  */
 public class Criterion {
-	private List<Criteria> criterias;
+	private Map<String, Criteria> criterias;
+	private boolean required = false;
 
-	public List<Criteria> getCriterias() {
+	public boolean isRequired() {
+		return required;
+	}
+
+	public void setRequired(boolean required) {
+		this.required = required;
+	}
+
+	public Map<String, Criteria> getCriterias() {
 		return criterias;
 	}
 
-	public void setCriterias(List<Criteria> criterias) {
+	public void setCriterias(Map<String, Criteria> criterias) {
 		this.criterias = criterias;
 	}
 }

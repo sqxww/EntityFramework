@@ -57,7 +57,7 @@ public class ApplicationContextUtil implements ApplicationContextAware {
 		//将applicationContext转换为ConfigurableApplicationContext 
 		ConfigurableApplicationContext configurableApplicationContext = 
 				(ConfigurableApplicationContext) context;
-		//获取bean工厂并转换为DefaultListableBeanFactory 
+		//获取bean工厂并转换为DefaultListableBeanFactory
 		return (DefaultListableBeanFactory) configurableApplicationContext.getBeanFactory();
 	}
 

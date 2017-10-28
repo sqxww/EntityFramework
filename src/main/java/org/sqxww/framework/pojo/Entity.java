@@ -1,6 +1,7 @@
 package org.sqxww.framework.pojo;
 
 import java.util.List;
+import java.util.Map;
 
 /* 实体类
  * @author 李志伟
@@ -10,18 +11,18 @@ import java.util.List;
 public class Entity {
 	private String entityId;
 	private String tableName;
-	private List<Field> fields;
-	private List<Criterion> criterions;
-	public List<Field> getFields() {
+	private Map<String, Field> fields;
+	private Map<String, Criterion> criterions;
+	public Map<String, Field> getFields() {
 		return fields;
 	}
-	public void setFields(List<Field> fields) {
+	public void setFields(Map<String, Field> fields) {
 		this.fields = fields;
 	}
-	public List<Criterion> getCriterions() {
+	public Map<String, Criterion> getCriterions() {
 		return criterions;
 	}
-	public void setCriterions(List<Criterion> criterions) {
+	public void setCriterions(Map<String, Criterion> criterions) {
 		this.criterions = criterions;
 	}
 	public String getEntityId() {

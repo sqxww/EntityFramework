@@ -10,6 +10,8 @@ public class Field {
 	private String labelName;
 	private String sqlType;
 	private Object defaulValue;
+	private Object value;
+	private boolean required = false;
 	
 	public String getFieldName() {
 		return fieldName;
@@ -34,5 +36,17 @@ public class Field {
 	}
 	public void setDefaulValue(Object defaulValue) {
 		this.defaulValue = defaulValue;
+	}
+	public Object getValue() {
+		return value;
+	}
+	public void setValue(Object value) {
+		this.value = value;
+	}
+	public boolean isRequired() {
+		return required;
+	}
+	public void setRequired(boolean required) {
+		this.required = required;
 	}
 }
