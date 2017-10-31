@@ -1,6 +1,5 @@
 package org.sqxww.framework.pojo;
 
-import java.util.List;
 import java.util.Map;
 
 /* 实体类

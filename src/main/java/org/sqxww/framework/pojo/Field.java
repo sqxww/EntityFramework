@@ -12,6 +12,7 @@ public class Field {
 	private Object defaulValue;
 	private Object value;
 	private boolean required = false;
+	private String javaType;
 	
 	public String getFieldName() {
 		return fieldName;
@@ -48,5 +49,11 @@ public class Field {
 	}
 	public void setRequired(boolean required) {
 		this.required = required;
+	}
+	public String getJavaType() {
+		return javaType;
+	}
+	public void setJavaType(String javaType) {
+		this.javaType = javaType;
 	}
 }

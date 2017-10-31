@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.sqxww.framework.dao.BaseQueryDao;
 import org.sqxww.framework.dao.mapper.EntityMapper;
 import org.sqxww.framework.pojo.Entity;
+import org.sqxww.framework.pojo.Field;
 
 /**
  * action:
@@ -19,14 +20,14 @@ public class BaseQueryDaoImpl implements BaseQueryDao {
 	private NamedParameterJdbcTemplate nameTemplate = null;
 
 	@Override
-	public Entity get(String sql, Map<String, Object> params) {
-		EntityMapper mapper = new EntityMapper();
+	public Entity get(String sql, Map<String, Field> fields, Map<String, Object> params) {
+		EntityMapper mapper = new EntityMapper(fields);
 		return nameTemplate.queryForObject(sql, params, mapper);
 	}
 
 	@Override
-	public List<Entity> find(String sql, Map<String, Object> params) {
-		EntityMapper mapper = new EntityMapper();
+	public List<Entity> find(String sql, Map<String, Field> fields, Map<String, Object> params) {
+		EntityMapper mapper = new EntityMapper(fields);
 		return nameTemplate.query(sql, params, mapper);
 	}
 

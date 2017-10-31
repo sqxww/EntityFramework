@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.sqxww.framework.pojo.Entity;
+import org.sqxww.framework.pojo.Field;
 
 /**
  * action:
@@ -18,7 +19,7 @@ public interface BaseQueryDao {
 	 * @param params
 	 * @return
 	 */
-	public Entity get(String sql, Map<String, Object> params);
+	public Entity get(String sql, Map<String, Field> fields, Map<String, Object> params);
 	
 	/**
 	 * 获取多个实体
@@ -26,5 +27,5 @@ public interface BaseQueryDao {
 	 * @param params
 	 * @return
 	 */
-	public List<Entity> find(String sql, Map<String, Object> params);
+	public List<Entity> find(String sql,Map<String, Field> fields, Map<String, Object> params);
 }
